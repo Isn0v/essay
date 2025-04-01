@@ -1,0 +1,31 @@
+\input{include/header.tex}
+
+\begin{document}
+
+\maketitle
+\sloppy
+
+\section{Введение}
+\input{introduction.tex}
+
+\section{Record-and-Replay}
+
+\subsection{Record: способ записи и ограничения исполнения}
+\input{rr/record.tex}
+
+\subsection{Replay: способ воспроизведения}
+\input{rr/replay.tex}
+
+\section{Технические детали реализации}
+\input{details.tex}
+
+\section{Техники ускорения и оптимизации}
+\input{optimization.tex}
+
+\section{Выводы}
+\input{conclusion.tex}
+
+\bibliography{include/my.bib}{}
+\bibliographystyle{gost2008s}
+
+\end{document}
