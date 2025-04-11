@@ -3,5 +3,5 @@
 target
 src-deprecated/**
 
-paper.pdf
+# paper.pdf
 essay.md
