@@ -8,9 +8,9 @@ cd $TARGET
 
 cp -r ../src/* .
 
-pdflatex $TEXFILE
+pdflatex -shell-escape $TEXFILE
 bibtex $TEXFILE
-pdflatex $TEXTILE
-pdflatex $TEXFILE
+pdflatex -shell-escape $TEXTILE
+pdflatex -shell-escape $TEXFILE
 
 mv paper.pdf ..
