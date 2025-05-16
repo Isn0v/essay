@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+\usepackage{cite} 
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning}
+
+\usepackage{geometry}
+\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{caption}     
+\usepackage{newfloat}    
+\usepackage{float}
+
+% code highlighting
+\usemintedstyle{manni}
+\definecolor{mintedbackground}{rgb}{0.96,0.96,0.96}
+\setminted{
+  bgcolor=mintedbackground,
+  linenos,
+  frame=lines,
+  framesep=2mm,
+  fontsize=\small,
+  breaklines % Автоматически переносить длинные строки
+}
+
+
+% environment for code listings
+\DeclareFloatingEnvironment[
+    fileext=lol,
+    listname={Список листингов},
+    name=Листинг,
+    placement=htbp
+]{codelisting}
+
+\captionsetup[codelisting]{name=Листинг}
+\captionsetup[figure]{name=Рисунок}
+
+
+
+% Настройки страницы
+% \oddsidemargin=-0.5cm
+% \setlength{\textwidth}{6.5in}
+% \addtolength{\voffset}{-20pt}
+% \addtolength{\headsep}{25pt}
+
+
+% \title{Реферат}
+% \author{Новиков Сергей}
+% \date{\today}
