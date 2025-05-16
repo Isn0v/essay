@@ -4,14 +4,14 @@
 поэтому вместо этого создаются жесткие ссылки 
 на все необходимые файлы.
 
-Также, современные файловые системы (\href{https://ru.wikipedia.org/wiki/XFS}{\texttt{XFS}})
-поддерживают механизм \href{https://en.wikipedia.org/wiki/Copy-on-write}{\texttt{COW}} (copy-on-write). 
+Также, современные файловые системы (\texttt{XFS}\footnote{\url{https://ru.wikipedia.org/wiki/XFS}})
+поддерживают механизм \texttt{COW}\footnote{\url{https://en.wikipedia.org/wiki/Copy-on-write}} (copy-on-write). 
 RR просто клонирует нужные области в каталоге трэйса (записанного наблюдаемого потока), не тратя почти места и времени. 
 Фактическое копирование произойдёт лишь в случае модификации исходного файла.
 
 \subsection{Эмуляция системных вызовов}
 
-Практика показала, что простое использование \href{https://man7.org/linux/man-pages/man2/ptrace.2.html}{\texttt{ptrace}} 
+Практика показала, что простое использование \texttt{ptrace} 
 неэффективно из-за частой смены контекста.
 Инженерами \cite{rr-paper} были придуманы решения, которые позволяют эмулировать системные вызовы разными способами:
 
@@ -27,9 +27,9 @@ RR просто клонирует нужные области в каталог
 \subsection{Interception Library}
 
 Interception library — ключевая оптимизация в RR, позволяющая достичь низких накладных расходов за счёт минимизации взаимодействия с 
-\href{https://man7.org/linux/man-pages/man2/ptrace.2.html}{\texttt{ptrace}}.
+\texttt{ptrace}.
 Она внедряется в каждый записываемый процесс, выполняет системные вызова, не вызывая
-\href{https://man7.org/linux/man-pages/man2/ptrace.2.html}{\texttt{ptrace}},
+\texttt{ptrace},
 и записывает результаты исполнения в специальный буфер, разделяемый с RR.
 В результате, с её помощью удается снизить количество смен контекста до с 2 до 0.
 

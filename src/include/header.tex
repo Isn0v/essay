@@ -1,72 +1,57 @@
 \documentclass{article}
-
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-
-\usepackage{tikz}
-\usetikzlibrary{shapes, arrows, positioning}
-
-\usepackage{graphicx}
-\usepackage{microtype}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 \usepackage[russian]{babel}
 
 \usepackage{cite} 
+\usepackage{hyperref}
 
-\usepackage{floatpag}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning}
+
+\usepackage{geometry}
+\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{caption}     
+\usepackage{newfloat}    
 \usepackage{float}
 
-% \usepackage{caption}
-\usepackage{hyperref}
-% \hypersetup{
-%     colorlinks=true,
-%     linkcolor=blue,
-%     urlcolor=red,
-%     pdftitle={Пример}
-% }
-
 % code highlighting
-\usepackage{minted}
-\usepackage{listings}
-\usepackage{xcolor}
-\lstdefinestyle{mypython}{
-  language=Python,
-  basicstyle=\ttfamily\small,
-  keywordstyle=\color{blue},
-  commentstyle=\color{gray},
-  stringstyle=\color{red},
-  numbers=left,
-  numberstyle=\tiny,
-  stepnumber=1,
-  numbersep=5pt,
-  breaklines=true,
-  frame=single,
-  captionpos=b
+\usemintedstyle{manni}
+\definecolor{mintedbackground}{rgb}{0.96,0.96,0.96}
+\setminted{
+  bgcolor=mintedbackground,
+  linenos,
+  frame=lines,
+  framesep=2mm,
+  fontsize=\small,
+  breaklines % Автоматически переносить длинные строки
 }
 
-\lstdefinestyle{myasm}{
-  language=[x86masm]Assembler,
-  basicstyle=\ttfamily\small,
-  keywordstyle=\color{purple},
-  commentstyle=\color{gray},
-  stringstyle=\color{orange},
-  numbers=left,
-  numberstyle=\tiny,
-  stepnumber=1,
-  numbersep=5pt,
-  breaklines=true,
-  frame=single,
-  captionpos=b
-}
+
+% environment for code listings
+\DeclareFloatingEnvironment[
+    fileext=lol,
+    listname={Список листингов},
+    name=Листинг,
+    placement=htbp
+]{codelisting}
+
+\captionsetup[codelisting]{name=Листинг}
+\captionsetup[figure]{name=Рисунок}
+
+
 
 % Настройки страницы
-\oddsidemargin=-0.5cm
-\setlength{\textwidth}{6.5in}
-\addtolength{\voffset}{-20pt}
-\addtolength{\headsep}{25pt}
+% \oddsidemargin=-0.5cm
+% \setlength{\textwidth}{6.5in}
+% \addtolength{\voffset}{-20pt}
+% \addtolength{\headsep}{25pt}
 
 
-\title{Реферат}
+% \title{Реферат}
+% \author{Новиков Сергей}
+% \date{\today}
